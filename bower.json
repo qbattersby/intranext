@@ -1,0 +1,29 @@
+{
+  "name": "susy-record",
+  "authors": [
+    "Quinn Battersby <qbattersby@me.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "license": "Closed",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.7"
+  },
+  "devDependencies": {
+    "compass-breakpoint": "breakpoint-sass#~2.6.1"
+  }
+}
