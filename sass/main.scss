@@ -82,7 +82,8 @@ $brand-green: #37A522 !default;
 $brand-black: #41454D !default;
 $rounded: 6px !default;
 $xs-screens: max-width 767px;
-$sm-screens: max-width 1100px;
+$sm-screens: max-width 1023px;
+$md-screens: max-width 1100px;
 
 
 body {
@@ -130,10 +131,88 @@ h4 {
   @include breakpoint($xs-screens) {
     @include container(95%);
   }
-  @include breakpoint($sm-screens) {
+  @include breakpoint($md-screens) {
     @include container(90%);
   }
 }
+
+.container-wide {
+  @include container(1280px);
+  @include breakpoint($xs-screens) {
+    @include container(95%);
+  }
+  @include breakpoint($md-screens) {
+    @include container(90%);
+  }
+}
+
+
+.mobile-nav {
+  display:none;
+}
+
+.close {
+  color:#666666;
+  border:1px solid #cccccc;
+  padding:5px 12px;
+  font-size:24px;
+  font-weight:bold;
+  position:absolute;
+  top:18px;
+  right:5px;
+  display:none;
+}
+
+.menu-toggle {
+  color:#666666;
+  border:1px solid #cccccc;
+  padding:5px 12px;
+  font-size:24px;
+  font-weight:bold;
+  position:absolute;
+  top:18px;
+  right:5px;
+  text-decoration:none;
+}
+
+@include breakpoint($xs-screens) {
+  .mobile-nav {
+    display:block;
+    position:relative;
+    min-height:80px;
+    #intranext-logo-mobile {
+      width:45%;
+      margin-top:0;
+      margin-left:5px;
+      margin-top:18px;
+    }
+    .mobile-menu {
+      display:none;
+      margin:0;
+      padding:0;
+      list-style-type: none;
+      padding-top:20px;
+      padding-bottom:30px;
+      li {
+        display:block;
+      }
+      a {
+        display:block;
+        line-height:50px;
+        text-align:center;
+        font-size:24px;
+        text-transform:uppercase;
+        color:#666666;
+        text-decoration:none;
+        &.active, &:hover {
+          color:white;
+          background:$brand-blue;
+        }
+      }
+    }
+  }
+}
+
 
 .topbar {
   width:100%;
@@ -141,7 +220,12 @@ h4 {
   background:#F9F9F9;
   font-size:12px;
   line-height:30px;
-  position:fixed;
+  @include breakpoint($xs-screens) {
+    display:none;
+  }
+  .pull-right {
+    margin-right:15px;
+  }
   a {
     color:#666666;
     display:inline-block;
@@ -199,12 +283,34 @@ h4 {
   width:195px;
   height:auto;
   float:left;
-  margin-top:63px;
+  margin-top:33px;
+  @include breakpoint($sm-screens) {
+    width:150px !important;
+  }
+}
+
+.scroll-nav {
+  border-bottom:1px solid #CCCCCC;
+  z-index:9999;
+  .nav {
+    a {
+      border-bottom:none;
+      &:hover, &.active {
+        border-bottom:none;
+      }
+    }
+  }
 }
 
 nav {
-  height:155px;
+  height:125px;
   width:100%;
+  position:fixed;
+  background:rgba(255,255,255,0.95);
+  top:30px;
+  @include breakpoint($xs-screens) {
+    display:none;
+  }
 }
 
 .nav-column {
@@ -218,7 +324,7 @@ nav {
   margin:0;
   padding:0;
   float:right;
-  margin-top:78px;
+  margin-top:48px;
   li {
   display:inline;
   }
@@ -239,8 +345,13 @@ nav {
       color:$brand-blue;
       border-bottom:2px solid $brand-blue;
     }
+    @include breakpoint($sm-screens) {
+      padding-left:5px;
+      padding-right:5px;
+    }
   }
 }
+
 
 
 .banner {
@@ -249,6 +360,13 @@ nav {
   height:600px;
   background-size:cover;
   background-repeat:none;
+  background-position:center center;
+  margin-top:125px;
+  width:100%;
+  @include breakpoint($xs-screens) {
+     height:400px;
+    margin-top:0;
+  }
 }
 
 .homepage-banner-callout {
@@ -259,6 +377,9 @@ nav {
   }
   h1 {
     color:white;
+  }
+  @include breakpoint($xs-screens) {
+    margin-top:70px;
   }
 }
 
@@ -290,6 +411,16 @@ nav {
   background:$brand-green;
 }
 
+.btn-white {
+  background:white;
+  color:$brand-blue;
+  &:hover {
+    background:white;
+    opacity:0.9;
+    color:$brand-blue;
+  }
+}
+
 .homepage-callout {
   text-align:center;
   h3 {
@@ -304,6 +435,32 @@ nav {
   margin-left:auto;
   margin-right:auto;
   margin-bottom:65px;
+  @include breakpoint($xs-screens) {
+    width:span(10);
+  }
+}
+
+.general-callout {
+   text-align:center;
+   margin-bottom:50px;
+   h3 {
+     color:$light-grey;
+     font-weight:300;
+     margin-top:36px;
+   }
+ }
+
+
+.page-callout {
+  margin-bottom:50px;
+  h2 {
+    text-align:center;
+  }
+  h3 {
+    color:$light-grey;
+    font-weight:300;
+    margin-top:36px;
+  }
 }
 
 .homepage-products {
@@ -336,10 +493,17 @@ nav {
 
 .product-column {
   @include span(1 of 3);
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+    margin-bottom:20px;
+  }
 }
 
 .product-column:last-of-type {
   @include span(1 of 3 last);
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+  }
 }
 
 .product-icon {
@@ -365,44 +529,29 @@ nav {
     font-weight:400;
     margin-top:20px;
     margin-bottom:-10px;
+    @include breakpoint($sm-screens) {
+      margin-top:0px;
+    }
   }
   h2 {
     margin-top:-10px;
     margin-bottom:30px;
+  }
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
   }
 }
 
 .howitworks-right {
   @include span(1 of 2 last);
 
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+  }
 
   img {
     max-width:100%;
     height:auto;
-  }
-}
-
-
-.values {
-  margin-top:160px;
-  margin-bottom:80px;
-  min-height:520px;
-  background-size:cover;
-  background-position:center center;
-  background-color:$brand-blue;
-  color:white;
-  width:100%;
-  padding-top:90px;
-  padding-bottom:90px;
-  text-align:center;
-  h2 {
-    color:white;
-  }
-  h3 {
-    color:white;
-    font-weight:300;
-    width:span(8);
-    margin:auto;
   }
 }
 
@@ -413,6 +562,10 @@ nav {
   padding-top:85px;
   padding-bottom:85px;
   margin-bottom:135px;
+  @include breakpoint($xs-screens) {
+    padding-top:40px;
+    padding-bottom:40px;
+  }
   h2 {
     margin-top:-10px;
   }
@@ -421,6 +574,9 @@ nav {
   }
   .btn {
     margin-top:50px;
+    @include breakpoint($xs-screens) {
+      margin-top:20px;
+    }
   }
 }
 
@@ -428,12 +584,33 @@ nav {
   @include span(1 of 2);
   padding-right:65px;
   padding-top:75px;
+  @include breakpoint($sm-screens) {
+    padding-right:10px;
+  }
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+    padding-top:0;
+    padding-right:0;
+    text-align:center;
+    padding-bottom:40px;
+    margin-bottom:20px;
+    border-bottom:1px solid #cccccc;
+  }
 }
 
 .product-switcher-right {
   @include span(1 of 2 last)
   border-left:1px solid #CCCCCC;
   padding-left:65px;
+  @include breakpoint($sm-screens) {
+    padding-left:30px;
+  }
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+    border-left:none;
+    padding-left:none;
+    margin-top:20px;
+  }
 }
 
 .product-nav {
@@ -443,8 +620,14 @@ nav {
   li {
     @include span(1 of 3)
     text-align:center;
+    @include breakpoint($xs-screens) {
+      @include span(1 of 1);
+    }
     &:last-of-type {
       @include span(1 of 3 last)
+      @include breakpoint($xs-screens) {
+        @include span(1 of 1);
+      }
     }
   }
   a {
@@ -458,22 +641,31 @@ nav {
   .nextsys-link:hover, .nextsys-link.active {
     color:$brand-blue;
     border-bottom-color: $brand-blue;
+    @include breakpoint($xs-screens) {
+      border-bottom:none;
+    }
   }
-  .nextsys-link:hover .nextsys-icon-sm-dis {
+  .nextsys-link:hover .nextsys-icon-sm {
     background:url(../img/nextsys-icon-sm.png) top left no-repeat;
   }
   .iguard-link:hover, .iguard-link.active {
     color:$brand-green;
     border-bottom-color: $brand-green;
+    @include breakpoint($xs-screens) {
+      border-bottom:none;
+    }
   }
-  .iguard-link:hover .iguard-icon-sm-dis {
+  .iguard-link:hover .iguard-icon-sm {
     background:url(../img/iguard-icon-sm.png) top left no-repeat;
   }
   .services-link:hover, .services-link.active {
     color:$brand-black;
     border-bottom-color: $brand-black;
+    @include breakpoint($xs-screens) {
+      border-bottom:none;
+    }
   }
-  .services-link:hover .services-icon-sm-dis {
+  .services-link:hover .services-icon-sm {
     background:url(../img/services-icon-sm.png) top left no-repeat;
   }
 }
@@ -485,42 +677,33 @@ nav {
   display:inline-block;
   width:31px;
   height:31px;
-  background:url(../img/iguard-icon-sm.png) top left no-repeat;
+  background:url(../img/iguard-icon-sm-dis.png) top left no-repeat;
 }
 
-.iguard-icon-sm-dis {
-  display:inline-block;
-  width:31px;
-  height:31px;
-  background:url(../img/iguard-icon-sm-dis.png) top left no-repeat;
+.active .iguard-icon-sm {
+  background:url(../img/iguard-icon-sm.png) top left no-repeat;
 }
 
 .nextsys-icon-sm {
   display:inline-block;
   width:31px;
   height:31px;
-  background:url(../img/nextsys-icon-sm.png) top left no-repeat;
+  background:url(../img/nextsys-icon-sm-dis.png) top left no-repeat;
 }
 
-.nextsys-icon-sm-dis {
-  display:inline-block;
-  width:31px;
-  height:31px;
-  background:url(../img/nextsys-icon-sm-dis.png) top left no-repeat;
+.active .nextsys-icon-sm {
+  background:url(../img/nextsys-icon-sm.png) top left no-repeat;
 }
 
 .services-icon-sm {
   display:inline-block;
   width:31px;
   height:31px;
-  background:url(../img/services-icon-sm.png) top left no-repeat;
+  background:url(../img/services-icon-sm-dis.png) top left no-repeat;
 }
 
-.services-icon-sm-dis {
-  display:inline-block;
-  width:31px;
-  height:31px;
-  background:url(../img/services-icon-sm-dis.png) top left no-repeat;
+.active .services-icon-sm {
+  background:url(../img/services-icon-sm.png) top left no-repeat;
 }
 
 .switcher-icon {
@@ -540,6 +723,10 @@ nav {
 
 .feature-text {
   padding-top:7px;
+  font-size:15.5px;
+  @include breakpoint($xs-screens) {
+    padding-top:0;
+  }
 }
 
 .iguard-switcher {
@@ -626,6 +813,264 @@ nav {
   display:inherit;
 }
 
+.values {
+  margin-top:160px;
+  margin-bottom:80px;
+  min-height:520px;
+  background-size:cover;
+  background-position:center center;
+  background-color:$brand-blue;
+  color:white;
+  width:100%;
+  padding-top:90px;
+  padding-bottom:90px;
+  text-align:center;
+  h2 {
+    color:white;
+  }
+  h3 {
+    color:white;
+    font-weight:300;
+    width:span(8);
+    margin:auto;
+  }
+}
+
+.values .quarter-column {
+  margin-top:50px;
+  margin-bottom:80px;
+  h3 {
+    font-weight:600;
+    text-transform: uppercase;
+    margin-bottom:30px;
+  }
+  svg {
+    margin-bottom:40px;
+    width:95px;
+    height:auto;
+  }
+}
+
+.values-columns {
+  @include susy-clearfix;
+}
+
+
+.quarter-column {
+  @include span(1 of 4);
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+  }
+}
+
+.quarter-column:nth-of-type(4) {
+    @include span(1 of 4 last);
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+  }
+}
+
+.puzzle-st0{fill:#2879B5;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+.puzzle-st1{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+.puzzle-st2{fill:none;stroke:#FFFFFF;stroke-width:2.9609;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,15.9477;}
+
+.graph-icon {
+  .st0{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  .st1{fill:#2879B5;}
+  .st2{fill:#FFFFFF;}
+  .st3{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+}
+
+
+.outcomes {
+  @include susy-clearfix;
+  h2 {
+    text-align:center;
+  }
+  h3 {
+    text-align:center;
+    font-weight:300;
+    margin-top:40px;
+    color:#666666;
+  }
+}
+
+.outcomes-left {
+  @include span (1 of 2);
+  margin-right:0;
+  h3 {
+    color:$brand-blue;
+    font-weight:500;
+    margin-bottom:0;
+    margin-top:35px;
+    text-transform: uppercase;
+    text-align:left;
+  }
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+  }
+}
+
+.outcomes-left-inner {
+  width:560px;
+  padding-top:25px;
+  float:right;
+  text-align:left;
+  margin-right:-120px;
+  @include breakpoint($sm-screens) {
+    width:100%;
+    margin-right:-20px;
+    padding-top:0;
+  }
+  @include breakpoint($xs-screens) {
+    width:95%;
+    margin:0 auto;
+  }
+  p {
+    margin-top:0;
+  }
+}
+
+.outcomes-right {
+  @include span (1 of 2 last);
+  background:url('../img/outcomes-img.jpg') bottom left no-repeat;
+  background-size:cover;
+  min-height:468px;
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+    min-height:200px;
+  }
+}
+
+
+.call-to-action {
+  padding-top:100px;
+  padding-bottom:100px;
+  background:$brand-black;
+  h3 {
+    color:white;
+    font-size:24px;
+    font-weight:500;
+    display:inline-block;
+    width:70%;
+    @include breakpoint($xs-screens) {
+      line-height:30px;
+      margin-bottom:30px;
+    }
+  }
+  .btn {
+    margin-left:60px;
+    display:inline-block;
+  }
+  @include breakpoint($sm-screens) {
+    text-align:center;
+    h3 {
+      display:block;
+    }
+    .btn {
+      margin-left:0;
+    }
+  }
+}
+
+.cta-blue {
+  background:$brand-blue;
+}
+
+
+footer {
+  background:#2E323B;
+  padding-top:75px;
+  padding-bottom:75px;
+  color:#676A70;
+  font-size:16px;
+  a {
+    color:#676A70;
+  }
+  h3 {
+    color:#676A70;
+    font-size:16px;
+  }
+}
+
+
+.footer-left {
+  @include span(3 of 12);
+  @include breakpoint($xs-screens) {
+    display:none;
+  }
+}
+
+.footer-middle {
+  @include span(4 of 12);
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+  }
+}
+
+.footer-right {
+  @include span(4 of 12 last);
+  @include breakpoint($xs-screens) {
+    @include span(1 of 1);
+  }
+}
+
+.footer-nav {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  text-transform: uppercase;
+  font-weight:600;
+  li {
+    margin-bottom:5px;
+  }
+  a {
+    text-decoration:none;
+    &:hover, &.active {
+      color:white;
+    }
+  }
+}
+
+.colophon {
+  border-top:1px solid #676A70;
+  padding-top:35px;
+  padding-bottom:35px;
+  background:#2E323B;
+  p {
+    color:#676A70;
+    margin:0;
+    font-size:12px;
+  }
+  a {
+    color:#676A70;
+    text-decoration:none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+
+main {
+  margin-bottom:80px;
+  h2 {
+    font-size:20px;
+    font-weight:400;
+    margin-bottom:30px;
+  }
+  h3 {
+    font-size:20px;
+    text-transform:uppercase;
+    font-weight:600;
+    margin-bottom:30px;
+  }
+  p {
+    margin-bottom:30px;
+  }
+}
+
 
 /* ==========================================================================
    Helper classes
@@ -676,4 +1121,23 @@ nav {
 
 .pull-left {
   float:left;
+}
+
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.brand-text {
+  color:$brand-blue !important;
 }

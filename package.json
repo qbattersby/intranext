@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Flat HTML/SCSS for IntraNext",
   "main": "index.html",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.10.1",
     "gulp": "^3.9.0",
     "gulp-compass": "^2.1.0",
     "gulp-minify": "0.0.5",
