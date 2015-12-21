@@ -96,4 +96,27 @@ $(document).ready(function(){
     });
 
 
+    // Image overalay sizing
+
+    // Make sure img have been loaded
+    $().ready(function() {
+        imageSize();
+    });
+    $(window).resize(function() {
+        imageSize();
+    });
+// Assign width/height to img
+    function imageSize() {
+        // Specify image dimensions
+        $('.team-img img').each(function() {
+            var findImgWidth = $(this).width();
+            var findImgHeight = $(this).height();
+
+            //$(this).attr('width', findImgWidth);
+            //$(this).attr('height', findImgHeight);
+            $('.team-img-overlay').css('width', findImgWidth);
+            $('.team-img-overlay').css('height', findImgHeight);
+        });
+    }
+
 });
