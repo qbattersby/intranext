@@ -220,7 +220,6 @@ h4 {
     min-height:80px;
     #intranext-logo-mobile {
       width:45%;
-      margin-top:0;
       margin-left:5px;
       margin-top:18px;
     }
@@ -376,8 +375,6 @@ nav {
     padding-right:13px;
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
-    -webkit-transition: all 0.15s ease;
-    transition: all 0.15s ease;
     border-bottom:2px solid transparent;
     &:hover, &.active {
       color:$brand-blue;
@@ -397,7 +394,7 @@ nav {
   margin-bottom:80px;
   height:600px;
   background-size:cover;
-  background-repeat:none;
+  background-repeat:no-repeat;
   background-position:center center;
   margin-top:125px;
   width:100%;
@@ -432,8 +429,6 @@ nav {
   border-radius: $rounded;
   display:inline-block;
   text-decoration:none;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   &:hover {
@@ -527,6 +522,9 @@ nav {
   .services-link:hover {
     color:$brand-black;
   }
+  @include breakpoint($xs-screens) {
+    display:none;
+  }
 }
 
 .product-column {
@@ -568,7 +566,7 @@ nav {
     margin-top:20px;
     margin-bottom:-10px;
     @include breakpoint($sm-screens) {
-      margin-top:0px;
+      margin-top:0;
     }
   }
   h2 {
@@ -637,7 +635,7 @@ nav {
 }
 
 .product-switcher-right {
-  @include span(1 of 2 last)
+  @include span(1 of 2 last);
   border-left:1px solid #CCCCCC;
   padding-left:65px;
   @include breakpoint($sm-screens) {
@@ -646,7 +644,7 @@ nav {
   @include breakpoint($xs-screens) {
     @include span(1 of 1);
     border-left:none;
-    padding-left:none;
+    padding-left:0;
     margin-top:20px;
   }
 }
@@ -656,13 +654,13 @@ nav {
   font-size:20px;
   text-transform:none;
   li {
-    @include span(1 of 3)
+    @include span(1 of 3);
     text-align:center;
     @include breakpoint($xs-screens) {
       @include span(1 of 1);
     }
     &:last-of-type {
-      @include span(1 of 3 last)
+      @include span(1 of 3 last);
       @include breakpoint($xs-screens) {
         @include span(1 of 1);
       }
@@ -1007,13 +1005,11 @@ nav {
     color:white;
     font-size:24px;
     font-weight:500;
-    display:inline-block;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .btn {
-    display:inline-block;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1195,7 +1191,7 @@ main {
     @include span(1 of 1);
   }
   &:nth-of-type(even) {
-    @include span(1 of 2 last)
+    @include span(1 of 2 last);
     @include breakpoint($xs-screens) {
       @include span(1 of 1);
     }
@@ -1233,8 +1229,6 @@ main {
       top:0;
       left:0;
       opacity:0;
-      -webkit-transition: all 0.3s ease;
-      transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease;
       text-align:center;
@@ -1344,14 +1338,22 @@ main {
 
 .demo-form {
   @include span(1 of 2 last);
+  background:#F2F2F2;
+  padding:35px;
+  input[type="text"], input[type="email"] {
+    width:100%;
+  }
+  .choices {
+    display:inline;
+  }
   @include breakpoint($xs-screens) {
     @include span(1 of 1);
     margin-bottom:100px;
-  }
-  background:#F2F2F2;
-  padding:35px;
-  input {
-    width:100%;
+    .choices {
+      display:block;
+      width:100%;
+      margin-left:-10px;
+    }
   }
 }
 
@@ -1552,7 +1554,6 @@ main {
   select {
     box-shadow: none;
     background-color: transparent;
-    background-image: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1573,8 +1574,6 @@ main {
     color:transparent;
     right:0;
     background-size: 16px 16px;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
     &:hover {

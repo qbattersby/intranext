@@ -205,7 +205,6 @@ h4 {
     min-height: 80px; }
     .mobile-nav #intranext-logo-mobile {
       width: 45%;
-      margin-top: 0;
       margin-left: 5px;
       margin-top: 18px; }
     .mobile-nav .mobile-menu {
@@ -381,8 +380,6 @@ nav {
     padding-right: 13px;
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
-    -webkit-transition: all 0.15s ease;
-    transition: all 0.15s ease;
     border-bottom: 2px solid transparent; }
     .nav a:hover, .nav a.active {
       color: #2879B5;
@@ -397,7 +394,7 @@ nav {
   margin-bottom: 80px;
   height: 600px;
   background-size: cover;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-position: center center;
   margin-top: 125px;
   width: 100%; }
@@ -428,8 +425,6 @@ nav {
   border-radius: 6px;
   display: inline-block;
   text-decoration: none;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease; }
   .btn:hover {
@@ -505,6 +500,9 @@ nav {
     color: #37A522; }
   .homepage-products .services-link:hover {
     color: #41454D; }
+  @media (max-width: 767px) {
+    .homepage-products {
+      display: none; } }
 
 .product-column {
   width: 30.76923%;
@@ -573,7 +571,7 @@ nav {
     margin-bottom: -10px; }
     @media (max-width: 1023px) {
       .howitworks-left h3 {
-        margin-top: 0px; } }
+        margin-top: 0; } }
   .howitworks-left h2 {
     margin-top: -10px;
     margin-bottom: 30px; }
@@ -656,7 +654,7 @@ nav {
       margin-left: 0;
       margin-right: 0;
       border-left: none;
-      padding-left: none;
+      padding-left: 0;
       margin-top: 20px; } }
 
 .product-nav {
@@ -1131,12 +1129,10 @@ nav {
     color: white;
     font-size: 24px;
     font-weight: 500;
-    display: inline-block;
     display: flex;
     flex-direction: column;
     justify-content: center; }
   .call-to-action .btn {
-    display: inline-block;
     display: flex;
     flex-direction: column;
     justify-content: center; }
@@ -1426,8 +1422,6 @@ main {
       opacity: 0;
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease;
-      -webkit-transition: all 0.3s ease;
-      transition: all 0.3s ease;
       text-align: center;
       padding-top: 40%;
       color: white; }
@@ -1543,15 +1537,21 @@ main {
   margin-right: 0;
   background: #F2F2F2;
   padding: 35px; }
+  .demo-form input[type="text"], .demo-form input[type="email"] {
+    width: 100%; }
+  .demo-form .choices {
+    display: inline; }
   @media (max-width: 767px) {
     .demo-form {
       width: 100%;
       float: left;
       margin-left: 0;
       margin-right: 0;
-      margin-bottom: 100px; } }
-  .demo-form input {
-    width: 100%; }
+      margin-bottom: 100px; }
+      .demo-form .choices {
+        display: block;
+        width: 100%;
+        margin-left: -10px; } }
 
 .service-banner {
   margin-bottom: 0; }
@@ -1731,7 +1731,6 @@ main {
   .sidebar select {
     box-shadow: none;
     background-color: transparent;
-    background-image: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1751,8 +1750,6 @@ main {
     color: transparent;
     right: 0;
     background-size: 16px 16px;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease; }
     .sidebar .search-btn:hover {
