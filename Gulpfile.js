@@ -1,15 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var compass = require('gulp-compass');
 var browserSync = require('browser-sync').create();
-
-// Default task
-//gulp.task('default', function() {
-//    gulp.src('sass/*.scss')
-//        .pipe(sass().on('error', sass.logError))
-//        .pipe(gulp.dest('./css/'));
-//});
-
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
@@ -30,10 +21,10 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['serve'], browserSync.reload);
-
-
 // Watch task
 gulp.task('watch', function() {
     gulp.watch('sass/*.scss',['sass']);
-})
+});
+
+// Default task
+gulp.task('default', ['serve'], browserSync.reload);
