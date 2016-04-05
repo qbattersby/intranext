@@ -117,7 +117,7 @@ $rounded: 6px !default;
 $xs-screens: max-width 767px;
 $sm-screens: max-width 1023px;
 $md-screens: max-width 1100px;
-
+$lg-screens: min-width 1101px;
 
 body {
   background:white;
@@ -400,6 +400,9 @@ nav {
   @include breakpoint($xs-screens) {
      height:400px;
     margin-top:0;
+  }
+  @include breakpoint($lg-screens) {
+    background-position:bottom center;
   }
 }
 
@@ -843,6 +846,15 @@ nav {
 .puzzle-st0{fill:#2879B5;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
 .puzzle-st1{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
 .puzzle-st2{fill:none;stroke:#FFFFFF;stroke-width:2.9609;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,15.9477;}
+
+
+.efficient-st0{fill:#297AB6;}
+.efficient-st1{fill:#FFFFFF;}
+.efficient-st2{fill:none;stroke:#FFFFFF;stroke-width:1.0631;stroke-miterlimit:10;}
+.efficient-st3{fill:none;stroke:#FFFFFF;stroke-width:1.0631;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.efficient-st4{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:1.3307;stroke-miterlimit:10;}
+
+
 
 .graph-icon {
   .st0{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
