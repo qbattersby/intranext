@@ -27,8 +27,8 @@ $(document).ready(function(){
                     'line-height': '72px',
                 },50);
                 $('#intranext-logo').stop().animate({
-                    width: '132px',
-                    'margin-top': '15px',
+                    width: '150px',
+                    'margin-top': '0px',
                 },50);
                 $('.nav').stop().animate({
                     'margin-top': '0px',
@@ -50,8 +50,8 @@ $(document).ready(function(){
                     'line-height': '75px'
                 },50);
                 $('#intranext-logo').stop().animate({
-                    width: '195px',
-                    'margin-top': '33px',
+                    width: '225px',
+                    'margin-top': '8px',
                 },50);
                 $('.nav').stop().animate({
                     'margin-top': '48px',

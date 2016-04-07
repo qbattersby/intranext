@@ -164,6 +164,10 @@ h4 {
   font-size:18px;
 }
 
+.intranext-logo {
+  .cls-1{fill:none;}.cls-2{fill:#24a64a;}.cls-3{fill:#037ab3;}.cls-4{fill:#20a64a;}.cls-5{fill:#0b7aaf;}.cls-6{fill:#067cab;}.cls-7{fill:#057da5;}.cls-8{fill:#0b809f;}.cls-9{fill:#088398;}.cls-10{fill:#0a8492;}.cls-11{fill:#0b878b;}.cls-12{fill:#0d8a81;}.cls-13{fill:#128b7a;}.cls-14{fill:#0e8e71;}.cls-15{fill:#0d916a;}.cls-16{fill:#0f9461;}.cls-17{fill:#0f9659;}.cls-18{fill:#139851;}.cls-19{fill:#129b4a;}.cls-20{fill:#129e49;}.cls-21{fill:#179f49;}.cls-22{fill:#18a149;}.cls-23{fill:#1ca44a;}.cls-24{fill:#b9b9b9;}.cls-25{clip-path:url(#clip-path);}.cls-26{fill:url(#radial-gradient);}
+}
+
 .container {
   @include container(1000px);
   @include breakpoint($xs-screens) {
@@ -220,8 +224,8 @@ h4 {
     min-height:80px;
     #intranext-logo-mobile {
       width:45%;
-      margin-left:5px;
-      margin-top:18px;
+      margin-left: 5px;
+      margin-top: -3px;
     }
     .mobile-menu {
       display:none;
@@ -317,12 +321,13 @@ h4 {
 .st22{fill:#14A331;}
 
 #intranext-logo {
-  width:195px;
+  width:225px;
   height:auto;
   float:left;
-  margin-top:33px;
+  margin-top:8px;
   @include breakpoint($sm-screens) {
-    width:150px !important;
+    width:175px !important;
+    margin-top:25px;
   }
 }
 

@@ -119,6 +119,84 @@ h3 {
 h4 {
   font-size: 18px; }
 
+.intranext-logo .cls-1 {
+  fill: none; }
+
+.intranext-logo .cls-2 {
+  fill: #24a64a; }
+
+.intranext-logo .cls-3 {
+  fill: #037ab3; }
+
+.intranext-logo .cls-4 {
+  fill: #20a64a; }
+
+.intranext-logo .cls-5 {
+  fill: #0b7aaf; }
+
+.intranext-logo .cls-6 {
+  fill: #067cab; }
+
+.intranext-logo .cls-7 {
+  fill: #057da5; }
+
+.intranext-logo .cls-8 {
+  fill: #0b809f; }
+
+.intranext-logo .cls-9 {
+  fill: #088398; }
+
+.intranext-logo .cls-10 {
+  fill: #0a8492; }
+
+.intranext-logo .cls-11 {
+  fill: #0b878b; }
+
+.intranext-logo .cls-12 {
+  fill: #0d8a81; }
+
+.intranext-logo .cls-13 {
+  fill: #128b7a; }
+
+.intranext-logo .cls-14 {
+  fill: #0e8e71; }
+
+.intranext-logo .cls-15 {
+  fill: #0d916a; }
+
+.intranext-logo .cls-16 {
+  fill: #0f9461; }
+
+.intranext-logo .cls-17 {
+  fill: #0f9659; }
+
+.intranext-logo .cls-18 {
+  fill: #139851; }
+
+.intranext-logo .cls-19 {
+  fill: #129b4a; }
+
+.intranext-logo .cls-20 {
+  fill: #129e49; }
+
+.intranext-logo .cls-21 {
+  fill: #179f49; }
+
+.intranext-logo .cls-22 {
+  fill: #18a149; }
+
+.intranext-logo .cls-23 {
+  fill: #1ca44a; }
+
+.intranext-logo .cls-24 {
+  fill: #b9b9b9; }
+
+.intranext-logo .cls-25 {
+  clip-path: url(#clip-path); }
+
+.intranext-logo .cls-26 {
+  fill: url(#radial-gradient); }
+
 .container {
   max-width: 1000px;
   margin-left: auto;
@@ -206,7 +284,7 @@ h4 {
     .mobile-nav #intranext-logo-mobile {
       width: 45%;
       margin-left: 5px;
-      margin-top: 18px; }
+      margin-top: -3px; }
     .mobile-nav .mobile-menu {
       display: none;
       margin: 0;
@@ -329,13 +407,14 @@ h4 {
   fill: #14A331; }
 
 #intranext-logo {
-  width: 195px;
+  width: 225px;
   height: auto;
   float: left;
-  margin-top: 33px; }
+  margin-top: 8px; }
   @media (max-width: 1023px) {
     #intranext-logo {
-      width: 150px !important; } }
+      width: 175px !important;
+      margin-top: 25px; } }
 
 .scroll-nav {
   border-bottom: 1px solid #CCCCCC;
