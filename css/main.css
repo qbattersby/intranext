@@ -324,9 +324,9 @@ h4 {
     margin-right: 10px;
     text-decoration: none; }
     .topbar a:hover {
-      color: #333333; }
+      color: #fff; }
     .topbar a.active {
-      color: #333333; }
+      color: #fff; }
     .topbar a:last-of-type {
       margin-right: 0; }
   .topbar ul {
@@ -475,6 +475,7 @@ nav {
   background-repeat: no-repeat;
   background-position: center center;
   margin-top: 125px;
+  margin-bottom: 80px;
   width: 100%; }
   @media (max-width: 767px) {
     .banner {
@@ -482,6 +483,22 @@ nav {
       margin-top: 0; } }
   @media (min-width: 1101px) {
     .banner {
+      background-position: bottom center; } }
+
+.homepage-banner {
+  color: white;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 125px;
+  width: 100%; }
+  @media (max-width: 767px) {
+    .homepage-banner {
+      height: 400px;
+      margin-top: 0; } }
+  @media (min-width: 1101px) {
+    .homepage-banner {
       background-position: bottom center; } }
 
 .homepage-banner-callout {
@@ -635,6 +652,28 @@ nav {
   height: auto;
   margin-left: auto;
   margin-right: auto; }
+
+.nextsys-column {
+  width: 30.76923%;
+  float: left;
+  margin-right: 3.84615%; }
+  @media (max-width: 767px) {
+    .nextsys-column {
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0; } }
+
+.nextsys-column:last-of-type {
+  width: 30.76923%;
+  float: right;
+  margin-right: 0; }
+  @media (max-width: 767px) {
+    .nextsys-column:last-of-type {
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0; } }
 
 /* SVG Icon Styles */
 .services-st0 {
