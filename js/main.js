@@ -28,7 +28,7 @@ $(document).ready(function(){
                 },50);
                 $('#intranext-logo').stop().animate({
                     width: '150px',
-                    'margin-top': '0px',
+                    'margin-top': '10px',
                 },50);
                 $('.nav').stop().animate({
                     'margin-top': '0px',
@@ -51,7 +51,7 @@ $(document).ready(function(){
                 },50);
                 $('#intranext-logo').stop().animate({
                     width: '225px',
-                    'margin-top': '8px',
+                    'margin-top': '30px',
                 },50);
                 $('.nav').stop().animate({
                     'margin-top': '48px',

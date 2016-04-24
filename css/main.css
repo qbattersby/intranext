@@ -284,7 +284,7 @@ h4 {
     .mobile-nav #intranext-logo-mobile {
       width: 45%;
       margin-left: 5px;
-      margin-top: -3px; }
+      margin-top: 15px; }
     .mobile-nav .mobile-menu {
       display: none;
       margin: 0;
@@ -410,11 +410,11 @@ h4 {
   width: 225px;
   height: auto;
   float: left;
-  margin-top: 8px; }
+  margin-top: 30px; }
   @media (max-width: 1023px) {
     #intranext-logo {
       width: 175px !important;
-      margin-top: 25px; } }
+      margin-top: 35px; } }
 
 .scroll-nav {
   border-bottom: 1px solid #CCCCCC;
